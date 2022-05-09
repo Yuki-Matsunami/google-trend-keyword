@@ -10,7 +10,7 @@
 <body>
     
 	<!-- Google Trends 人気キーワード -->
-	<section class="section-standard">
+	<section class="section-standard" id="google-trends">
 		<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2884_RC01/embed_loader.js"></script>
 		<script type="text/javascript"> trends.embed.renderExploreWidget("RELATED_QUERIES", {"comparisonItem":[{"keyword":"/m/010r7yq5","geo":"JP","time":"today 3-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%203-m&geo=JP&q=%2Fm%2F010r7yq5","guestPath":"https://trends.google.co.jp:443/trends/embed/"}); </script>
 	</section>
@@ -18,6 +18,21 @@
     <style>
         <!-　スタイル必要であればここに記述  -->
     </style>
+
+<script type="text/javascript">
+	alert("start");
+	document.addEventListener('DOMContentLoaded', event => {
+  // HTMLのDOMツリーが読み込み完了した時に実行される
+  document.getElementById('trends-widget-1').onload = () => {
+	var widget = document.getElementById('trends-widget-1')
+	alert (widget)
+	widget.contentWindow.document.querySelector("body > div.trends-wrapper.ng-scope > trends-widget > ng-include > widget > div > div > ng-include.bullets-view-selector-container.bullets-view-embed-selector-container.ng-scope > md-menu > button > i").click()
+	widget.contentWindow.document.querySelector("#menu_container_0 > md-menu-content > md-menu-item:nth-child(1) > button > div").click()
+
+    alert("finish")
+  };
+});
+</script>
 
 </body>
 
